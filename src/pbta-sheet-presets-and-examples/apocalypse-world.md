@@ -4,7 +4,7 @@ This preset is based on the [_Apocalypse World_](http://apocalypse-world.com/) r
 
 ![](<../.gitbook/assets/image (7).png>)
 
-```
+```toml
 # Configure Rolls
 rollFormula = "2d6"
 statToggle = "Highlight"
@@ -116,4 +116,6 @@ statToggle = "Highlight"
   # Define logical groups for moves.
   [npc.moveTypes]
     mc = "MC Moves"
+  [npc.equipmentTypes]
+    loot = "Loot"
 ```
