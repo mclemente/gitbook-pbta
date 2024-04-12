@@ -6,7 +6,8 @@ Character sheets are defined under the `[character]` group in your sheet configu
 * **attributesTop** - Attributes in the attributesTop group are displayed directly below the stats in character sheets.&#x20;
 * **attributesLeft** - Attributes in the attributesLeft group are displayed directly to the left of the moves list in character sheets.
 * **moveTypes** - This group defines the groups/separators that will appear in the moves tab of character sheets. Examples include "Basic", "Advanced", "Spells", and "Class Moves".
-* **equipmentTypes** - (optional) This group defines the groups/separators that will appear in the equipment tab of character sheets. Examples include "Gear" and "Loot".
+* **equipmentTypes** - This group defines the groups/separators that will appear in the equipment tab of character sheets. Examples include "Gear" and "Loot".
+* **description** This group defines the editor fields that will appear in the Description tab of character sheets.
 
 ![](<.gitbook/assets/image (6).png>)
 
@@ -109,7 +110,18 @@ Assigning an attribute to a character should look similar to the following:
       "Hopeless (-2 to unleash)",
       "Insecure (-2 to defend)"
     ]
-      
+
+```
+
+
+### Playbook Property
+`playbook` is an optional attribute property which makes a property to only be displayed if an actor has the chosen playbook. It accepts either the Playbook's name or its slug.
+
+```
+[character.attributesTop.foo]
+  type = "Clock"
+  label = "Foo"
+  playbook = "The Chosen" # or "the-chosen"
 ```
 
 ## moveTypes
@@ -125,14 +137,43 @@ Each move type should be entered as a single string value.
   class = "Class Moves"
 ```
 
+### Advanced moveTypes
+`moveTypes` can be created as objects and accept the following properties:
+
+* **label** - The display name of the move type.
+* **creation** - (optional) Will add all Moves with this move type when creating a character.
+* **playbook** - (optional) Moves with this move type will display a Playbook field.
+
+```
+[character.moveTypes.basic]
+  label = "Basic Moves"
+  creation = true
+  playbook = false
+```
+
 ## equipmentTypes
 
 As with `moveTypes`, the `equipmentTypes` option will allow you to define the various equipment types that can be used to organize equipment in your players' characters. For example, "Gear" or "Loot".
 
-Equipment types are optional, but each equipment type should be entered as a single string value if you use them.
+Each equipment type should be entered as a single string value.
 
 ```
 [character.equipmentTypes]
   gear = "Gear"
   loot = "Loot"
+```
+
+## description
+
+The `description` attribute adds new description editors to the Description tab and accepts the following properties:
+
+* **label** - The display name of the description.
+* **creation** - (Optional. Default: "") The description's text when an actor is created.
+* **playbook** - (Optional, default: true) The visibility of this field on the Limited sheet.
+
+```
+[character.description.foo]
+  label = "Foo"
+  value = "Lorem ipsum"
+  limited = false
 ```

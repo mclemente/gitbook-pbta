@@ -6,14 +6,6 @@ This guide will help you configure the system so that you can run campaigns in y
 
 ![](<.gitbook/assets/image (3).png>)
 
-## How to Install the System
-
-The PbtA system is currently in development and is not yet available through the official package listing for Foundry. However, it has been used to run many games and is reasonably well tested, and I consider it stable enough to use for an actual campaign.
-
-To install the public beta version, use this manifest URL with Foundry's system installer: [https://gitlab.com/asacolips-projects/foundry-mods/pbta/-/jobs/artifacts/beta/raw/system.json?job=build-beta](https://gitlab.com/asacolips-projects/foundry-mods/pbta/-/jobs/artifacts/beta/raw/system.json?job=build-beta)
-
-Development is currently in a temporary hiatus, but I'm expecting it to resume by the end of 2021 and will focus the next major release on supporting configuring sheets through the UI, rather than using the TOML syntax described later in this guide.
-
 ## How to Use This Guide
 
 This guide is broken into the following major sections:
