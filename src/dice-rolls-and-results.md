@@ -2,13 +2,20 @@
 
 While most sections of the system's sheet configuration are tied to either characters or NPCs, rolls are defined separately and aren't included in either character or NPC groups.
 
-There are three main fields/groups to configure for rolls:
+## Required Fields
+These fields are required and will halt sheet configuration if not provided.
 
 * `rollFormula` - The dice roll formula that rolls should use when an explicit dice roll formula isn't provided. For example, when a character makes a roll using a stat, it will add that stat bonus to this rollFormula. When an NPC makes a roll, it's typically with a custom formula that's written out fully in the move and ignores this setting.
+* `rollResults` - This group contains the various result ranges used for moves and stat rolls. Each range should be a subgroup with `range` and `label` properties.
+
+## Optional Fields
+These are optional fields that alter sheet behavior.
+
 * `rollShifting` - (optional) If set to true, buttons will appear on moves in chat to allow their results to be shifted up or down. Defaults to false.
+* `statClocks` - (optional) Adds a number of pips to stats. Useful for games such as AW: Burned Over.
+* `statShifting` - (optional) Adds a Stat Shift feature to increase/decrease stats. Useful for games such as Masks.
 * `statToggle` - (optional) This can be left out, entered as a direct value, or entered as a group with `label` and `modifier` properties inside it. The stat toggle will show up in each stat on character sheets and is useful for some game's such as Highlights in AW or Debilities in DW.
 * `minMod` and `maxMod` - (optional) This can be any number, and if included it will prevent rolls from going outside of the bounds you establish. For example, if you set `minMod` to -2 and `maxMod` to 4, a roll with a +5 bonus would instead have a +4 bonus due to the maxMod.
-* `rollResults` - This group contains the various result ranges used for moves and stat rolls. Each range should be a subgroup with `range` and `label` properties.
 
 Here's an example of what configuring rolls and result ranges will look like on your character moves and chat messages:
 
@@ -22,6 +29,19 @@ rollFormula = "2d6"
 
 # Enable roll shifting on chat messages
 rollShifting = true
+
+# Optionally add pips to stats
+statClocks = 4
+
+# Optionally add stat shifting
+statShifting = true
+# or
+[statShifting]
+  # Everything is optional. Values shown are the defaults for English localization
+  label = "Stat Shift" # String shown on Character Sheet. Otherwise localize "{stat} Shift"
+  value = 1 # The value to be shifted up/down
+  stat = "Stat" # String used to localize the label
+  stats = "Stats" # String used to localize "Character shifts {stats}" on Chat Message
 
 # Optionally enable roll mod caps.
 minMod = -4
