@@ -25,3 +25,14 @@
 * [The Sprawl](pbta-sheet-presets-and-examples/the-sprawl.md)
 * [Monster of the Week](pbta-sheet-presets-and-examples/motw.md)
 * [Brindlewood Bay](pbta-sheet-presets-and-examples/brindlewood-bay.md)
+
+## PbtA System Add-on Modules
+
+* [Dungeon Bitches](pbta-add-on-modules/dungeon-bitches.md)
+* [Fantasy World RPG](pbta-add-on-modules/fantasy-world.md)
+* [Masks](pbta-add-on-modules/masks.md)
+* [Monster of the Week](pbta-add-on-modules/monster-of-the-week.md)
+* [Rhapsody of Blood](pbta-add-on-modules/rhapsody-of-blood.md)
+* [Root](pbta-add-on-modules/root.md)
+* [Under Hollow Hills](pbta-add-on-modules/under-hollow-hills.md)
+* [World of Dungeons](pbta-add-on-modules/world-of-dungeons.md)
