@@ -16,7 +16,7 @@ statToggle = "Toggle"
     range = "7-9"
     label = "Partial success"
   [rollResults.success]
-    range = "10-12"
+    range = "10+"
     label = "Success!"
 
 ########################################
