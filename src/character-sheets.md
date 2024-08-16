@@ -45,17 +45,17 @@ This system supports two sets of attributes: **attributesLeft** and **attributes
 {% hint style="info" %}
 #### Referencing attributes in rolls and macros
 
-If you're trying to reference an attribute in something like an inline roll, then the attribute groups will need to be accessed using the shorthand `attrLeft` or `attrTop`. For instance, the following could work:
+If you're trying to reference an attribute in something like an inline roll, then the attribute groups will need to be accessed using the shorthand `attributes`. For instance, the following could work:
 
 ```
-[[2d6+@attrTop.armor.value]]
+[[2d6+@attributes.armor.value]]
 ```
 
 If you're instead trying to reference an attribute in a macro, you can find them on the actor using a similar format:
 
 ```javascript
-let actor = game.actors.getName('My Character');
-let armor = actor.data.data.attrTop.armor.value;
+const actor = game.actors.getName('My Character');
+const armor = actor.system.attributes.armor.value;
 ```
 {% endhint %}
 
